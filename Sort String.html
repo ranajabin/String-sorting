@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Sort a list alphabetically Using JavaScript
+    </title>
+
+    <script>
+        function sort() {
+
+            // Declaring Variables
+            var geek_list, i, run, li, stop;
+
+            // Taking content of list as input
+            my_list = document.getElementById("MyList");
+
+            //  my_list = prompt("Please Enter Your String : ");
+
+            run = true;
+
+            while (run) {
+                run = false;
+                li = my_list.getElementsByTagName("LI");
+
+
+                for (i = 0; i < (li.length - 1); i++) {
+                    stop = false;
+                    if (li[i].innerHTML.toLowerCase() >
+                        li[i + 1].innerHTML.toLowerCase()) {
+                        stop = true;
+                        break;
+                    }
+                }
+
+                if (stop) {
+                    li[i].parentNode.insertBefore(
+                        li[i + 1], li[i]);
+
+                    run = true;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body style="background-color: rgb(230, 216, 216);">
+    <h1 style="text-align:center;
+        color: rgb(53, 34, 139);">
+        Hello Programmer !
+    </h1>
+    <p style="text-align:center; font-size: 15px;
+        font-weight: bold;">
+        Click on the button to sort the list
+    </p>
+
+
+    <ul style="color: rgb(220, 100, 20); " id="MyList">
+        <li>Welcome</li>
+        <li>To</li>
+        <li>The</li>
+        <li>JavaScript</li>
+    </ul>
+    <br>
+
+    <center>
+        <button style="color: rgb(220, 20, 153); size: 20px;" onclick="sort()">
+            Click Here To Sort
+        </button>
+    </center>
+</body>
+
+</html>
